@@ -66,6 +66,7 @@ final class LocationManager: NSObject {
         super.init()
 
         locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
     }
 

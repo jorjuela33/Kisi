@@ -37,13 +37,13 @@ extension UnlockViewController: UnlockViewControllerInterface {
 
     func didUnlockDoor() {
         lockView.animate() {
-            self.presenter?.dimiss()
+            self.presenter?.dismiss()
         }
     }
 
     func showErrorMessage(_ message: String) {
         showMessage(message) {
-            self.presenter?.dimiss()
+            self.presenter?.dismiss()
         }
     }
 }

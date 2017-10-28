@@ -10,7 +10,7 @@ import UserNotifications.UNUserNotificationCenter
 import UIKit.UIApplication
 
 protocol UnlockPresenterInterface: class {
-    func dimiss()
+    func dismiss()
     func unlock(_ identifier: Int)
 }
 
@@ -50,7 +50,7 @@ extension UnlockPresenter: UnlockPresenterInterface {
 
     // MARK: UnlockPresenterInterface
 
-    func dimiss() {
+    func dismiss() {
         wireframe?.dismiss()
     }
 
@@ -77,6 +77,7 @@ extension UnlockPresenter: UnlockInteractorOutput {
             interface?.didUnlockDoor()
         } else {
             presentLocalNotification()
+            dismiss()
         }
     }
 }
