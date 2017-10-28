@@ -36,7 +36,6 @@ extension UnlockInteractor: UnlockInteractorInput {
 
     func unlock(_ identifier: Int) {
         let unlockOperation = UnlockOperation(identifier: identifier)
-        unlockOperation.queuePriority = .high
         unlockOperation.operationCompletionBlock { [unowned self] errors in
             guard errors.isEmpty else {
                 self.presenter?.didFailUnlocking(errors)
@@ -45,5 +44,8 @@ extension UnlockInteractor: UnlockInteractorInput {
 
             self.presenter?.didFinishUnlocking()
         }
+
+        unlockOperation.queuePriority = .high
+        operationQueue.addOperation(unlockOperation)
     }
 }

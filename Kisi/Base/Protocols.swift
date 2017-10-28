@@ -6,9 +6,17 @@
 //  Copyright © 2017 Jorge Orjuela. All rights reserved.
 //
 
+import UserNotifications.UNNotificationRequest
 import UIKit.UIViewController
 
 protocol AlertPresentable {}
+
+protocol BackgroundHandler {
+    var applicationState: UIApplicationState { get }
+
+    func beginBackgroundTask(withName taskName: String?, expirationHandler handler: (() -> Void)?) -> UIBackgroundTaskIdentifier
+    func endBackgroundTask(_ identifier: UIBackgroundTaskIdentifier)
+}
 
 protocol ConfigurableCell {
     associatedtype Element
@@ -40,7 +48,7 @@ protocol LocationManagerObservable: class {
     func locationManager(_ manager: LocationManager, didChangeAuthorizationStatus status: AuthorizationStatus)
     func locationManager(_ manager: LocationManager, didFailWithError error: LocationManagerError)
     func locationManager(_ manager: LocationManager, monitoringDidFail lockIdentifier: Int16, error: LocationManagerError)
-    func locationManager(_ manager: LocationManager, didRangeLocksInProximities proximities: [LocationManager.LockProximity], regionIdentifier: Int)
+    func locationManager(_ manager: LocationManager, didRangeLocks ranges: [BeaconRange], regionIdentifier: Int)
 }
 
 protocol ObservableOperation {
@@ -61,6 +69,10 @@ protocol OperationCondition {
 protocol OperationQueueDelegate: NSObjectProtocol {
     func operationQueue(_ operationQueue: KSOperationQueue, willAddOperation operation: Operation)
     func operationQueue(_ operationQueue: KSOperationQueue, operationDidFinish operation: Operation, withErrors errors: [Error])
+}
+
+protocol NotificationPresentable {
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
 }
 
 protocol Presenter {
@@ -88,9 +100,7 @@ protocol UserDefaultsStorable {
 }
 
 protocol Wireframe: class {
-    associatedtype PresenterWireframe: Presenter
     associatedtype ViewController: UIViewController
 
-    var presenter: PresenterWireframe { get }
-    var viewController: ViewController? { get set }
+    weak var viewController: ViewController? { get set }
 }

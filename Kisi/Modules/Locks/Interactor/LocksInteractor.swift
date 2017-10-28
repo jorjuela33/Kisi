@@ -20,6 +20,8 @@ protocol LocksInteractorOutput: InteractorOutput {
     func locationManagerDidFail(withError error: LocationManagerError)
 }
 
+private let beaconFilter: Double = 0.5
+
 class LocksInteractor {
 
     private let locationManager: LocationManager
@@ -33,6 +35,7 @@ class LocksInteractor {
     init(locationManager: LocationManager, operationQueue: NetworkingOperationQueue) {
         self.locationManager = locationManager
         self.operationQueue = operationQueue
+        locationManager.addObserver(self)
     }
 }
 
@@ -72,10 +75,11 @@ extension LocksInteractor: LocationManagerObservable {
         presenter?.locationManagerDidFail(withError: error)
     }
 
-    func locationManager(_ manager: LocationManager, didRangeLocksInProximities proximities: [LocationManager.LockProximity], regionIdentifier: Int) {
-        for proximity in proximities {
-            guard proximity == .immediate else { continue }
+    func locationManager(_ manager: LocationManager, didRangeLocks ranges: [BeaconRange], regionIdentifier: Int) {
+        for range in ranges {
+            guard range.accuracy <= beaconFilter else { continue }
 
+            locationManager.stopMonitoring()
             presenter?.didFoundLock(regionIdentifier)
             break
         }

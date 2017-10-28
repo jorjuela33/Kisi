@@ -29,6 +29,11 @@ enum LocationManagerError: Error {
     case notAuthorized
 }
 
+struct BeaconRange {
+    let accuracy: Double
+    let proximity: LocationManager.Proximity
+}
+
 final class LocationManager: NSObject {
 
     private let locationManager = CLLocationManager()
@@ -42,11 +47,11 @@ final class LocationManager: NSObject {
         case whenInUse
     }
 
-    enum LockProximity: Int {
-        case far
+    enum Proximity: Int {
+        case unknown
         case immediate
         case near
-        case unkwown
+        case far
     }
 
     static var authorizationStatus: AuthorizationStatus {
@@ -95,15 +100,12 @@ final class LocationManager: NSObject {
     }
 
     final func startMonitoring(_ lock: Lock) {
-        guard !isMonitoring(lock) else { return }
-
         let locationPermissionOperation = LocationPermissionOperation(manager: self, usage: usage)
         locationPermissionOperation.operationCompletionBlock { [weak self] isLocationPermissionGranted in
             guard let strongSelf = self else { return }
 
             if isLocationPermissionGranted {
                 let beaconRegion = CLBeaconRegion(proximityUUID: lock.uuid, major: lock.major, minor: lock.minor, identifier: String(lock.id))
-                strongSelf.locationManager.startRangingBeacons(in: beaconRegion)
                 strongSelf.locationManager.startMonitoring(for: beaconRegion)
             } else {
                 let observers = strongSelf.currentObservers()
@@ -112,6 +114,12 @@ final class LocationManager: NSObject {
         }
 
         operationQueue.addOperation(locationPermissionOperation)
+    }
+
+    final func stopMonitoring() {
+        guard let rangedBeaconRegions = locationManager.rangedRegions as? Set<CLBeaconRegion> else { return }
+
+        rangedBeaconRegions.forEach({ self.locationManager.stopRangingBeacons(in: $0) })
     }
 
     final func stopMonitoring(_ lock: Lock) {
@@ -149,11 +157,17 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
-        guard let identifier = Int(region.identifier) else { return }
+        guard let identifier = Int(region.identifier), beacons.isEmpty == false else { return }
 
         let observers = currentObservers()
-        let proximities = beacons.flatMap({ LockProximity(rawValue: $0.proximity.rawValue) ?? .unkwown })
-        observers.forEach({ $0.locationManager(self, didRangeLocksInProximities: proximities, regionIdentifier: identifier) })
+        let ranges = beacons.flatMap({ BeaconRange(accuracy: $0.accuracy, proximity: Proximity(rawValue: $0.proximity.rawValue) ?? .unknown) })
+        observers.forEach({ $0.locationManager(self, didRangeLocks: ranges, regionIdentifier: identifier) })
+    }
+
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        guard let beaconRegion = region as? CLBeaconRegion else { return }
+
+        locationManager.startRangingBeacons(in: beaconRegion)
     }
 
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

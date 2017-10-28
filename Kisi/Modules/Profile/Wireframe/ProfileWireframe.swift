@@ -13,7 +13,7 @@ class ProfileWireframe {
     private let operationQueue: NetworkingOperationQueue
 
     let presenter: ProfilePresenter
-    var viewController: UINavigationController?
+    weak var viewController: UINavigationController?
 
     // MARK: Initialization
 

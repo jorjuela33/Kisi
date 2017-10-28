@@ -12,9 +12,11 @@ extension AlertPresentable where Self: UIViewController {
 
     // MARK: Instance methods
 
-    func showMessage(_ message: String, title: String = "Attention!") {
+    func showMessage(_ message: String, title: String = "Attention!", completionHandler: (() -> Void)? = nil) {
         let alertViewController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+            completionHandler?()
+        }
         alertViewController.addAction(cancelAction)
         present(alertViewController, animated: true, completion: nil)
     }

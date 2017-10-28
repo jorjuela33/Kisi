@@ -13,7 +13,7 @@ class TabBarWireframe {
     private let operationQueue: NetworkingOperationQueue
 
     let presenter: TabBarPresenter
-    var viewController: TabBarViewController?
+    weak var viewController: TabBarViewController?
 
     // MARK: Initialization
 

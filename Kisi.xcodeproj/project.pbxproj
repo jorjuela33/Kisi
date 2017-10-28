@@ -53,6 +53,7 @@
 		CF564DE31FA2B70A00E66F18 /* UnlockOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF564DD81FA2B70A00E66F18 /* UnlockOperation.swift */; };
 		CF5C721E1FA38A36000400F0 /* LockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5C721D1FA38A36000400F0 /* LockView.swift */; };
 		CF6BC42D1FA2BECB0004AAE2 /* URLRequest+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6BC42C1FA2BECB0004AAE2 /* URLRequest+Additions.swift */; };
+		CFA56B0A1FA460BC0094C406 /* UNUserNotificationCenter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA56B091FA460BC0094C406 /* UNUserNotificationCenter+Additions.swift */; };
 		CFAAA9601FA2B765008D0327 /* ExclusivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA95F1FA2B765008D0327 /* ExclusivityManager.swift */; };
 		CFAAA9631FA2B880008D0327 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA9621FA2B880008D0327 /* Server.swift */; };
 		CFAAA9651FA2B8DC008D0327 /* UserDefaults+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA9641FA2B8DC008D0327 /* UserDefaults+Additions.swift */; };
@@ -80,6 +81,12 @@
 		CFCF29E81FA288D800A7E1B4 /* UnlockWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF29E71FA288D800A7E1B4 /* UnlockWireframe.swift */; };
 		CFCF29EA1FA2891500A7E1B4 /* UnlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF29E91FA2891500A7E1B4 /* UnlockViewController.swift */; };
 		CFCF29EC1FA289B900A7E1B4 /* AlertPresentable+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF29EB1FA289B900A7E1B4 /* AlertPresentable+Additions.swift */; };
+		CFF162D01FA3FDA700B2E385 /* BackgroundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162CF1FA3FDA700B2E385 /* BackgroundObserver.swift */; };
+		CFF162D21FA3FFFB00B2E385 /* UIApplication+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162D11FA3FFFB00B2E385 /* UIApplication+Additions.swift */; };
+		CFF162D91FA40E1100B2E385 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162D81FA40E1100B2E385 /* SplashViewController.swift */; };
+		CFF162DB1FA40E2900B2E385 /* SplashWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162DA1FA40E2900B2E385 /* SplashWireframe.swift */; };
+		CFF162DD1FA40E3100B2E385 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162DC1FA40E3100B2E385 /* SplashPresenter.swift */; };
+		CFF162DF1FA40E3A00B2E385 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF162DE1FA40E3A00B2E385 /* SplashInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +153,7 @@
 		CF564DD81FA2B70A00E66F18 /* UnlockOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockOperation.swift; sourceTree = "<group>"; };
 		CF5C721D1FA38A36000400F0 /* LockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockView.swift; sourceTree = "<group>"; };
 		CF6BC42C1FA2BECB0004AAE2 /* URLRequest+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Additions.swift"; sourceTree = "<group>"; };
+		CFA56B091FA460BC0094C406 /* UNUserNotificationCenter+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UNUserNotificationCenter+Additions.swift"; sourceTree = "<group>"; };
 		CFAAA95F1FA2B765008D0327 /* ExclusivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusivityManager.swift; sourceTree = "<group>"; };
 		CFAAA9621FA2B880008D0327 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		CFAAA9641FA2B8DC008D0327 /* UserDefaults+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Additions.swift"; sourceTree = "<group>"; };
@@ -174,6 +182,12 @@
 		CFCF29E91FA2891500A7E1B4 /* UnlockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockViewController.swift; sourceTree = "<group>"; };
 		CFCF29EB1FA289B900A7E1B4 /* AlertPresentable+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertPresentable+Additions.swift"; sourceTree = "<group>"; };
 		CFEC0FCC0E2EB96EA344F6B5 /* Pods_Kisi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kisi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFF162CF1FA3FDA700B2E385 /* BackgroundObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundObserver.swift; sourceTree = "<group>"; };
+		CFF162D11FA3FFFB00B2E385 /* UIApplication+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Additions.swift"; sourceTree = "<group>"; };
+		CFF162D81FA40E1100B2E385 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CFF162DA1FA40E2900B2E385 /* SplashWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashWireframe.swift; sourceTree = "<group>"; };
+		CFF162DC1FA40E3100B2E385 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		CFF162DE1FA40E3A00B2E385 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,6 +358,7 @@
 			children = (
 				CF37F3921FA2ED3700C01174 /* Locks */,
 				CF2DCF9D1FA25EA1006E4022 /* Profile */,
+				CFF162D31FA40DE300B2E385 /* Splash */,
 				CF1411401FA2973200876009 /* TabBar */,
 				CFCF29E21FA2889C00A7E1B4 /* Unlock */,
 			);
@@ -564,6 +579,7 @@
 			isa = PBXGroup;
 			children = (
 				CF564DD61FA2B70A00E66F18 /* BlockObserver.swift */,
+				CFF162CF1FA3FDA700B2E385 /* BackgroundObserver.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -688,9 +704,11 @@
 				CF543EA11FA2CA1300F7262E /* Dictionary+Additions.swift */,
 				CF14113B1FA2911800876009 /* LoadingIndicatorPresentable+Additions.swift */,
 				CFCF29DC1FA26E8500A7E1B4 /* StoryBoardIdentifiable+Additions.swift */,
+				CFF162D11FA3FFFB00B2E385 /* UIApplication+Additions.swift */,
 				CFCF29DE1FA26EDB00A7E1B4 /* UIStoryboard+Additions.swift */,
 				CF6BC42C1FA2BECB0004AAE2 /* URLRequest+Additions.swift */,
 				CFAAA9641FA2B8DC008D0327 /* UserDefaults+Additions.swift */,
+				CFA56B091FA460BC0094C406 /* UNUserNotificationCenter+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -735,6 +753,49 @@
 			isa = PBXGroup;
 			children = (
 				CFCF29E71FA288D800A7E1B4 /* UnlockWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		CFF162D31FA40DE300B2E385 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CFF162D41FA40DEB00B2E385 /* Interactor */,
+				CFF162D51FA40DF100B2E385 /* Presenter */,
+				CFF162D61FA40DF900B2E385 /* View */,
+				CFF162D71FA40DFE00B2E385 /* Wireframe */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		CFF162D41FA40DEB00B2E385 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CFF162DE1FA40E3A00B2E385 /* SplashInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CFF162D51FA40DF100B2E385 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CFF162DC1FA40E3100B2E385 /* SplashPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CFF162D61FA40DF900B2E385 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFF162D81FA40E1100B2E385 /* SplashViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFF162D71FA40DFE00B2E385 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				CFF162DA1FA40E2900B2E385 /* SplashWireframe.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -965,6 +1026,7 @@
 				CF564DC81FA2B69500E66F18 /* URLDataRequestOperation.swift in Sources */,
 				CF564DE11FA2B70A00E66F18 /* BlockObserver.swift in Sources */,
 				CFCA10DC1FA25FBA0020B21F /* Lock.swift in Sources */,
+				CFF162DF1FA40E3A00B2E385 /* SplashInteractor.swift in Sources */,
 				CF564DC61FA2B69500E66F18 /* StringResponseSerializer.swift in Sources */,
 				CF564DE01FA2B70A00E66F18 /* KNOperationQueue.swift in Sources */,
 				CF0A80F61FA2DD4800E858CD /* LocationPermissionOperation.swift in Sources */,
@@ -975,15 +1037,18 @@
 				CF564DC51FA2B69500E66F18 /* JSONResponseSerializer.swift in Sources */,
 				CF1411491FA29F4C00876009 /* TabBarPresenter.swift in Sources */,
 				CFCF29E81FA288D800A7E1B4 /* UnlockWireframe.swift in Sources */,
+				CFF162D01FA3FDA700B2E385 /* BackgroundObserver.swift in Sources */,
 				CF564DC71FA2B69500E66F18 /* ParameterEncoding.swift in Sources */,
 				CF564DDF1FA2B70A00E66F18 /* KNOperation.swift in Sources */,
 				CFCF29E11FA272A900A7E1B4 /* ProfileInteractor.swift in Sources */,
+				CFF162DD1FA40E3100B2E385 /* SplashPresenter.swift in Sources */,
 				CF37F3981FA2EDBC00C01174 /* LocksInteractor.swift in Sources */,
 				CFAAA9601FA2B765008D0327 /* ExclusivityManager.swift in Sources */,
 				CF0A80F81FA2E21700E858CD /* MutuallyExclusive.swift in Sources */,
 				CFCF29DF1FA26EDB00A7E1B4 /* UIStoryboard+Additions.swift in Sources */,
 				CF14114C1FA29FA300876009 /* TabBarInteractor.swift in Sources */,
 				CFCF29D91FA26C8B00A7E1B4 /* ProfilePresenter.swift in Sources */,
+				CFA56B0A1FA460BC0094C406 /* UNUserNotificationCenter+Additions.swift in Sources */,
 				CF564DC31FA2B69500E66F18 /* NetworkingOperationQueue.swift in Sources */,
 				CF0DE99A1FA310FD00B87129 /* NotificationPermissionOperation.swift in Sources */,
 				CF1411441FA2976E00876009 /* TabBarViewController.swift in Sources */,
@@ -994,10 +1059,13 @@
 				CFCA10E11FA261FB0020B21F /* ProfileTableViewController.swift in Sources */,
 				CFCF29D71FA26C7200A7E1B4 /* ProfileWireframe.swift in Sources */,
 				CF6BC42D1FA2BECB0004AAE2 /* URLRequest+Additions.swift in Sources */,
+				CFF162D91FA40E1100B2E385 /* SplashViewController.swift in Sources */,
 				CF5C721E1FA38A36000400F0 /* LockView.swift in Sources */,
 				CF1411461FA297FC00876009 /* TabBarWireframe.swift in Sources */,
 				CF543EA51FA2CE4B00F7262E /* LocationManager.swift in Sources */,
+				CFF162D21FA3FFFB00B2E385 /* UIApplication+Additions.swift in Sources */,
 				CF29C1711FA2F06B00AF6383 /* LocksTableViewController.swift in Sources */,
+				CFF162DB1FA40E2900B2E385 /* SplashWireframe.swift in Sources */,
 				CF2DCF7C1FA256B6006E4022 /* AppDelegate.swift in Sources */,
 				CFAAA9631FA2B880008D0327 /* Server.swift in Sources */,
 				CF564DC11FA2B69500E66F18 /* SessionDelegate.swift in Sources */,
@@ -1168,10 +1236,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJ8252D488;
+				DEVELOPMENT_TEAM = 39WGD252CS;
 				INFOPLIST_FILE = Kisi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kisi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stabilitasventures.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1185,10 +1254,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SJ8252D488;
+				DEVELOPMENT_TEAM = 39WGD252CS;
 				INFOPLIST_FILE = Kisi/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Kisi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stabilitasventures.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

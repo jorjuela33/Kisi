@@ -96,7 +96,6 @@ extension LocationPermissionOperation: LocationManagerObservable {
     }
 
     func locationManager(_ manager: LocationManager, didFailWithError error: LocationManagerError) { /* NO OP */ }
-    func locationManager(_ manager: LocationManager, didRangeLocksInProximities proximities: [LocationManager.LockProximity], regionIdentifier: Int) {
-    }
+    func locationManager(_ manager: LocationManager, didRangeLocks ranges: [BeaconRange], regionIdentifier: Int) {}
     func locationManager(_ manager: LocationManager, monitoringDidFail lockIdentifier: Int16, error: LocationManagerError) { /* NO OP */ }
 }

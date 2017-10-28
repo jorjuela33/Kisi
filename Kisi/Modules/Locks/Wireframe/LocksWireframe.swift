@@ -13,7 +13,7 @@ class LocksWireframe {
     private let operationQueue: NetworkingOperationQueue
 
     let presenter: LocksPresenter
-    var viewController: UINavigationController?
+    weak var viewController: UINavigationController?
 
     // MARK: Initialization
 
@@ -38,21 +38,20 @@ class LocksWireframe {
 
         interactor.presenter = presenter
         presenter.wireframe = wireframe
-        return wireframe.createViewController()
+        return wireframe.createViewController(presenter)
     }
-}
 
-extension LocksWireframe: Wireframe {
+    // MARK: Private methods
 
-    // MARK: Wireframe
-
-    func createViewController() -> UINavigationController {
+    func createViewController(_ presenter: LocksPresenter) -> UINavigationController {
         let viewController: LocksTableViewController = UIStoryboard(storyBoardName: .main).instantiateViewController()
         viewController.presenter = presenter
         presenter.interface = viewController
-        
+
         let navigationController = UINavigationController(rootViewController: viewController)
         self.viewController = navigationController
         return navigationController
     }
 }
+
+extension LocksWireframe: Wireframe {}

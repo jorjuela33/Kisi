@@ -42,7 +42,9 @@ extension UnlockViewController: UnlockViewControllerInterface {
     }
 
     func showErrorMessage(_ message: String) {
-        showMessage(message)
+        showMessage(message) {
+            self.presenter?.dimiss()
+        }
     }
 }
 

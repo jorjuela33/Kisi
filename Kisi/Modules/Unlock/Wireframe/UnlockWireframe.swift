@@ -14,7 +14,7 @@ class UnlockWireframe {
     private let identifier: Int
 
     let presenter: UnlockPresenter
-    var viewController: UnlockViewController?
+    weak var viewController: UnlockViewController?
 
     // MARK: Initialization
 

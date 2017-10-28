@@ -28,6 +28,7 @@ final class UnlockOperation: KSOperation {
 
         super.init()
 
+        addObserver(BackgroundObserver())
         name = "Unlock Operation"
     }
 

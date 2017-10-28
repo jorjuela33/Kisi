@@ -24,6 +24,8 @@
 	<string>Used to monitor near beacons</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Used to monitor near beacons</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Used to monitor near beacons</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
