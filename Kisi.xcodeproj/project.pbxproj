@@ -70,6 +70,7 @@
 		CFAAA9991FA2B9B4008D0327 /* FailedCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA9831FA2B9B4008D0327 /* FailedCondition.swift */; };
 		CFAAA99A1FA2B9B4008D0327 /* TestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA9841FA2B9B4008D0327 /* TestUtilities.swift */; };
 		CFAAA99B1FA2B9B4008D0327 /* UserDefaultsStorableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAAA9851FA2B9B4008D0327 /* UserDefaultsStorableMock.swift */; };
+		CFC9418D1FA4CCD500D42CB6 /* BackgroundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC9418C1FA4CCD500D42CB6 /* BackgroundManager.swift */; };
 		CFCA10DC1FA25FBA0020B21F /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA10DB1FA25FBA0020B21F /* Lock.swift */; };
 		CFCA10DF1FA260060020B21F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA10DE1FA260060020B21F /* Protocols.swift */; };
 		CFCA10E11FA261FB0020B21F /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA10E01FA261FB0020B21F /* ProfileTableViewController.swift */; };
@@ -170,6 +171,7 @@
 		CFAAA9831FA2B9B4008D0327 /* FailedCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailedCondition.swift; sourceTree = "<group>"; };
 		CFAAA9841FA2B9B4008D0327 /* TestUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtilities.swift; sourceTree = "<group>"; };
 		CFAAA9851FA2B9B4008D0327 /* UserDefaultsStorableMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorableMock.swift; sourceTree = "<group>"; };
+		CFC9418C1FA4CCD500D42CB6 /* BackgroundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundManager.swift; sourceTree = "<group>"; };
 		CFCA10DB1FA25FBA0020B21F /* Lock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		CFCA10DE1FA260060020B21F /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		CFCA10E01FA261FB0020B21F /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		CF37F3991FA2EEB300C01174 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CFC9418B1FA4CCC100D42CB6 /* Background Manager */,
 				CF29C16D1FA2EEF200AF6383 /* Models */,
 			);
 			path = Common;
@@ -687,6 +690,14 @@
 				CFAAA9851FA2B9B4008D0327 /* UserDefaultsStorableMock.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CFC9418B1FA4CCC100D42CB6 /* Background Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CFC9418C1FA4CCD500D42CB6 /* BackgroundManager.swift */,
+			);
+			path = "Background Manager";
 			sourceTree = "<group>";
 		};
 		CFCA10DA1FA25FAC0020B21F /* Lock */ = {
@@ -1033,6 +1044,7 @@
 				CF1411371FA28B2800876009 /* UnlockInteractor.swift in Sources */,
 				CF564DDB1FA2B70A00E66F18 /* AuthenticatedCondition.swift in Sources */,
 				CFCF29EC1FA289B900A7E1B4 /* AlertPresentable+Additions.swift in Sources */,
+				CFC9418D1FA4CCD500D42CB6 /* BackgroundManager.swift in Sources */,
 				CF1411351FA28B0A00876009 /* UnlockPresenter.swift in Sources */,
 				CF564DC51FA2B69500E66F18 /* JSONResponseSerializer.swift in Sources */,
 				CF1411491FA29F4C00876009 /* TabBarPresenter.swift in Sources */,

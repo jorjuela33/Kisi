@@ -7,6 +7,7 @@
 //
 
 import CoreLocation.CLLocationManager
+import UIKit.UIApplication
 
 enum AuthorizationStatus {
     case authorized
@@ -36,6 +37,7 @@ struct BeaconRange {
 
 final class LocationManager: NSObject {
 
+    private var backgroundManager = BackgroundManager()
     private let locationManager = CLLocationManager()
     private var observers: [LocationManagerObservable] = []
     private let lock = NSLock()
@@ -108,6 +110,7 @@ final class LocationManager: NSObject {
             if isLocationPermissionGranted {
                 let beaconRegion = CLBeaconRegion(proximityUUID: lock.uuid, major: lock.major, minor: lock.minor, identifier: String(lock.id))
                 strongSelf.locationManager.startMonitoring(for: beaconRegion)
+                strongSelf.locationManager.startRangingBeacons(in: beaconRegion)
             } else {
                 let observers = strongSelf.currentObservers()
                 observers.forEach({ $0.locationManager(strongSelf, didFailWithError: LocationManagerError.notAuthorized) })
@@ -163,12 +166,6 @@ extension LocationManager: CLLocationManagerDelegate {
         let observers = currentObservers()
         let ranges = beacons.flatMap({ BeaconRange(accuracy: $0.accuracy, proximity: Proximity(rawValue: $0.proximity.rawValue) ?? .unknown) })
         observers.forEach({ $0.locationManager(self, didRangeLocks: ranges, regionIdentifier: identifier) })
-    }
-
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        guard let beaconRegion = region as? CLBeaconRegion else { return }
-
-        locationManager.startRangingBeacons(in: beaconRegion)
     }
 
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

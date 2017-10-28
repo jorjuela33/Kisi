@@ -62,8 +62,8 @@ extension Lock: JSONMappeable {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
-        self.major = dictionary[DictionaryKey.major.rawValue] as? UInt16 ?? 0
-        self.minor = dictionary[DictionaryKey.minor.rawValue] as? UInt16 ?? 0
+        self.major = 1//dictionary[DictionaryKey.major.rawValue] as? UInt16 ?? 0
+        self.minor = 1//dictionary[DictionaryKey.minor.rawValue] as? UInt16 ?? 0
         self.name = name
         self.uuid = uuid
     }

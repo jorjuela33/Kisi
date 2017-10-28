@@ -53,10 +53,10 @@ final class UnlockOperation: KSOperation {
     }
 
     override func execute() {
-        dataRequestOperation.responseJSON { [unowned self] result in
+        dataRequestOperation.responseJSON { result in
             self.finishWithError(result.error)
         }
-        .validate(acceptableStatusCodes: [201])
+        .validate(acceptableStatusCodes: [200])
         .resume()
     }
 }
